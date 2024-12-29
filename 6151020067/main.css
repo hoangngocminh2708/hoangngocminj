@@ -1,0 +1,65 @@
+/* Reset some basic elements to remove default browser styles */
+body, h1, h2, h3, p, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the body */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Changed to min-height to ensure body height */
+    background-color: #f0f0f0;
+}
+
+/* Style for headers */
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;  /* Center-align headers */
+}
+
+/* Style for paragraphs */
+p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: justify;  /* Justify text alignment for better readability */
+    max-width: 600px;     /* Limit the width for better readability */
+}
+
+/* Style for a button */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;  /* Increase font size for better readability */
+    margin-top: 10px; /* Add margin to ensure spacing between elements */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Optional: Add responsive design for smaller screens */
+@media (max-width: 600px) {
+    body {
+        padding: 20px; /* Add padding to body for smaller screens */
+    }
+
+    p {
+        margin-bottom: 15px; /* Adjust margin for smaller screens */
+    }
+
+    button {
+        width: 100%; /* Make button full width on smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồ án tốt nghiệp</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Form Đăng Nhập -->
+    <div class="login-container">
+        <h2>Đăng Nhập</h2>
+        <form id="loginForm">
+            <label for="username">Tài khoản</label>
+            <input type="text" id="username" required>
+            <label for="password">Mật khẩu</label>
+            <input type="password" id="password" required>
+            <button type="submit">Đăng nhập</button>
+        </form>
+    </div>
+
+    <!-- Menu Bên Trái, Ẩn Ban Đầu -->
+    <div class="sidebar" id="sidebar" style="display: none;">
+        <h3>Hệ thống</h3>
+        <ul>
+            <li><a id="device-control-link">Điều khiển thiết bị</a></li>
+            <li><a id="chart-link">Biểu đồ</a></li>
+            <li><a id="logout">Đăng xuất</a></li>
+        </ul>
+    </div>
+
+    <!-- Giao Diện Chính, Ẩn Ban Đầu -->
+    <div class="content" id="mainContent" style="display: none;">
+        <h1>Đồ án tốt nghiệp</h1>
+
+        <!-- Điều khiển thiết bị -->
+        <div id="device-control" style="display: none;">
+            <div class="control-container">
+                <!-- Điều khiển cửa -->
+                <div class="control-item">
+                    <div id="Cua"></div>
+                    <div class="button-container">
+                        <button id="MoCua">Mở Cửa</button>
+                        <button id="DongCua">Đóng Cửa</button>
+                    </div>
+                </div>
+
+                <!-- Điều khiển đèn -->
+                <div class="control-item">
+                    <div id="Den"></div>
+                    <div class="button-container">
+                        <button id="BatDen">Bật Đèn</button>
+                        <button id="TatDen">Tắt Đèn</button>
+                    </div>
+                </div>
+
+                <!-- Điều khiển quạt -->
+                <div class="control-item">
+                    <div id="Quat"></div>
+                    <div class="button-container">
+                        <button id="BatQuat">Bật Quạt</button>
+                        <button id="TatQuat">Tắt Quạt</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sensor-data" id="sensorData">
+                <p>Nhiệt độ: <span id="temperature">--</span> °C</p>
+                <p>Độ ẩm: <span id="humidity">--</span> %</p>
+                <p>Nồng độ khói: <span id="smoke">--</span> </p>
+            </div>
+        </div>
+
+        <!-- Biểu đồ -->
+        <div id="chart-container" class="chart-container">
+            <div class="chart-item">
+                <h2>Biểu đồ Nhiệt độ</h2>
+                <canvas id="temperatureChart"></canvas>
+            </div>
+            <div class="chart-item">
+                <h2>Biểu đồ Độ ẩm</h2>
+                <canvas id="humidityChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
